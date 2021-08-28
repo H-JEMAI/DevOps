@@ -32,5 +32,9 @@ mission is to prepare a strategy for this migration?
    6 Migrate component groups to macroservices :
       * move component groups to separate projects
       * make separate deployments
-   7 Migrate macroservices to microservices.
+   7 Migrate macroservices to microservices
+     # https://insights.sei.cmu.edu/media/images/Microservices_fig_6_varVjdj.max-730x733.png
+   
+   
+   
     
