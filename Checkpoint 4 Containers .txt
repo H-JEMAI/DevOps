@@ -50,7 +50,8 @@ we update node to last version and adding expose port to prevent DDOS
 
 docker file
 
-#
+#  from les langages/framework qu'ona 
+#  from languages  and/or frameworks that we have
 FROM node:14
 WORKDIR /App
 COPY package.json /App
@@ -58,13 +59,45 @@ COPY package.json /App
 RUN npm install
 #
 COPY . /App
-EXPOSE  3000
-CMD ["RUN","npm","start"]
+EXPOSE 3000   
+# the same port  that we will use in file.yaml
+
+# la commande a excuter pour lancer le projet ( pour créer container)
+# the command to execute in order to lauch the project 
+CMD  [ "npm", "run","start" ]   
 
 
 
 
+#  npm run  start in the same way  
 
+# docker  run -it  --name [NOM DU CONTAINER] -p 3000:3000 image docker  
+
+
+#pour creeer une image
+# docker built  t --name [NOM De L'IMAGE]  CMD PATH DU DOCKER FIEL . IF IN THE SAME DIRECTORY
+
+
+# to view show docker images
+# docker images
+
+# to view current containers in job
+# docker ps
+
+# to view current containers in execution but closed  (port left allocated )
+# docker ps -a
+
+
+# docker rm -rf   name du container or id container
+
+
+# avant de faire docker push 
+# docker login
+
+#  to push docker image  in docker hub doit etre taggé
+
+# docker tag  NOM IMAGE (ds notre liste) USERNAME OF THE DOCKER HUB / IMAGE VOULU IN DOCKER HUB:v1(tag)
+# docker push  USERNAME OF THE DOCKER HUB / IMAGE VOULU IN DOCKER HUB:v1
 
 
 
