@@ -18,13 +18,21 @@ Prepare jenkins to create a deployment to a kubernetes cluster
 
        git clone  [github project link or bitbucket project link] 
        kubectl create namespace devops
+       kubectl get namespaces
        kubectl apply -f serviceAccount.yaml
 
        kubectl get nodes
        kubectl create -f volume.yaml
-       kubectl apply -f deployment.yaml
+       # deployment.yaml file
+       kubectl create -f jenkins-deployment.yaml --namespace jenkins
        kubectl get deployments -n devops
        kubectl  describe deployments --namespace=jenkins
+       #jenkins-service.yaml 
+       kubectl create -f jenkins-service.yaml --namespace jenkins
+       # http://node_ip_address:4000   to access jenkins dashboard
+       kubectl get pods --namespace jenkins
+       kubectl logs jenkins-deployment-45345423412-k9003 --namespace jenkins
+       
 
 
 
