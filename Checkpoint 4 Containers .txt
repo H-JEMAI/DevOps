@@ -13,3 +13,94 @@ Instructions
     Login to your account 
     tag your image
     Push it to docker hub
+    
+  
+  
+  
+  # we had used a react app and cloud VM proper to the instructor Ahmed (ssh access with MobaXterm)
+  
+  
+  
+  ##this is the docker file  
+    #
+
+FROM node:12.21-buster
+
+WORKDIR /App
+
+#copier les dependences pour le projet react ( chaque language a sa propre dependences)
+# copy the dependencies for react project (each language has its proper dependencies)
+COPY package*.json /App/
+
+#install dependencies
+RUN npm install
+
+#copier les fichers sources 
+#copy sources files
+COPY  . /App
+
+# la commande a excuter pour lance le projet ( pour créer conteneur)
+#the command to execute to launch the project  ( to create the container)
+CMD ["npm","run","start" ]
+
+
+
+
+we update node to last version and adding expose port to prevent DDOS 
+
+docker file
+
+#
+FROM node:14
+WORKDIR /App
+COPY package.json /App
+#
+RUN npm install
+#
+COPY . /App
+EXPOSE  3000
+CMD ["RUN","npm","start"]
+
+
+
+
+
+
+
+
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.8.0-1036-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Jun 27 14:17:39 UTC 2021
+
+  System load:  0.05              Processes:             116
+  Usage of /:   4.7% of 28.90GB   Users logged in:       0
+  Memory usage: 7%                IPv4 address for eth0: 10.2.0.4
+  Swap usage:   0%
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+1 update can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Sun Jun 27 09:50:14 2021 from 196.179.238.219
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+hatem@hatem:~$ ls
+stopwatch-react
+hatem@hatem:~$ nano Dockerfile
+hatem@hatem:~$
+
+ DOCKER BUILT -t  stopwatch-react .
+ DOCKER images
+ DOCKER RUN  -it -p4000:3000 --name hatemcontainer stopwatch-react
+ DOCKER  TAG user/hatem:V1
+ DOCKER  PUSH
