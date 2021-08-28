@@ -61,7 +61,39 @@
        #inthe first hand we will be asked to create first admin user we create and continue
        # then we create the instance configuartion 
        # we make choice of free style project
+       # we install nodeJS in the cloud VM (serverVM)
+       # we create prject locally npx create-app-myapp
+       # when we launch project {npm install+npm start}
+       # in the VM server we have to install java jenkins nodejs git
+       # we have to create project pipeline jenkins
+       # we have to create jenkins file in the react project
+       # we have to configure project pipeline 
        
+       #JENKINS FILE
+       
+       pipeline{
+    agent any
+    stages{
+        stage("build"){
+            steps{
+                sh 'npm install'
+                sh 'npm build'
+                echo 'building done'
+            }
+        }
+        stage("test"){
+            steps{
+                echo 'testing done'
+              
+            }
+        }
+    }
+    
+}
+
+     #(npm run start&)
+      sudo kill -9 $(sudo lsof -t -i:3000)
+ 
      
        
        
