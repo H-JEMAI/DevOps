@@ -2,4 +2,67 @@
 
  Checkpoint 3 CICD
  
- test 
+ We have a javascript project and we need to create a CI-CD pipeline using Jenkins.
+ 
+ task to do :
+
+    Download and Install Jenkins
+    Install Jenkins Plugins
+    Create free style project and test installation with a simple project
+    We need to try declarative pipeline with a front end angular project .
+    Create a Jenkinsfile in your project and push it to github
+    Get pipeline from github and make build
+    
+    
+    our cloud VM is Ubuntu
+    
+    Jenkins on Ubuntu 18.04
+
+    Step 1: Install Java
+      sudo apt update
+      sudo apt install openjdk-8-jdk
+      
+    Step 2: Add the Jenkins Repository
+      #importing the Gnu Privacy Guard keys
+      wget –q –O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add –
+      sudo nano /etc/apt/sources.list
+      #jenkins repositery
+      deb https://pkg.jenkins.io/debian binary
+      ##  save nano file
+      
+    Step 3: Install Jenkins
+     sudo apt update
+     sudo apt install Jenkins 
+      # response Y yes to install
+      
+      # verify if jenkins well installed
+     sudo systemctl status jenkins
+      # rsponse active with green color
+     
+    
+    Step 4: Modify Firewall to Allow Jenkins
+       # check if port 8080 is open 
+    
+    
+    Step 5: Set up Jenkins
+      http://104.215.78.258:8080           
+      # 104.215.78.258 is our cloud VM adress  thanks to the instructor Ahmed
+      # it can be ip_address_or_domain
+      
+      # to access to jenkins in the browser we have to copy the password from the following file
+      
+       sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+       
+       #the password is a succession of alphanumeric characters
+       # in the browser we aunlock jenkins access with this key
+       
+       #104.215.78.258:8080/login?from=%2F
+       #after entering the code we install suggested plugins
+       #inthe first hand we will be asked to create first admin user we create and continue
+       # then we create the instance configuartion 
+       # we make choice of free style project
+       
+     
+       
+       
+   
